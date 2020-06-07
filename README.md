@@ -74,7 +74,7 @@ CMD /usr/sbin/httpd -DFOREGROUND
 
 add line:
 
-![configure github pull](/readme_images/dconf.JPEG)
+![configure github pull](/readme_images/dconf.JPG)
 
 
 This will allow any port to access the Docker service remotely from other systems. Enter the following command in the remote system:

@@ -5,6 +5,8 @@ architecture is provisioned in such a way that when the developer will commit th
 
 ![configure docker services](/readme_images/Untitled%20document%20(1).jpg)
 
+This was a complete Architecture that will Deploy the Website and keep on updating it on runtime using Dynamic Distributed Clusters. One of the main advantage of having this kind of architecture is that as soon as the Containers are Deployed, the remote Clusters get shut down immediately so that there is no wastage of resources. Hence they are termed as Dynamic Distributed Clusters.
+
 ## Prerequisites:
 following things must be configured in your base operating system.
 
@@ -127,8 +129,7 @@ This job will match the labels we used to configure the job and will launch the 
 
  it will create Deployments using the Container created using Image built in the Developer Job. It will expose the Deployments and will keep on updating the Containers as soon as the developer commits the updated code again on the GitHub.
 
+![configure job2](/readme_images/7.JPG)
 
 
-
-This was a complete Architecture that will Deploy the Website and keep on updating it on runtime using Dynamic Distributed Clusters. One of the main advantage of having this kind of architecture is that as soon as the Containers are Deployed, the remote Clusters get shut down immediately so that there is no wastage of resources. Hence they are termed as Dynamic Distributed Clusters.
 

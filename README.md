@@ -100,21 +100,15 @@ Set the Image name built using the Kubernetes Dockerfile
 
 Once done now its time to configure Jobs in Jenkins. Create two Jobs in Jenkins- Developer Job and the Kubernetes_Deployment Job
 
-
-
-Jenkins
-
-No alt text provided for this image
-
-
 Job1: Developer
 
 This Job will pull the GitHub repo and download the Dockerfile and the Website. On downloading the Dockerfile, it will build the respective Docker image on runtime.
 
-No alt text provided for this image
-No alt text provided for this image
-No alt text provided for this image
-No alt text provided for this image
+![configure docker services](/readme_images/1.JPG)
+![configure docker services](/readme_images/2.JPG)
+![configure docker services](/readme_images/3.JPG)
+
+
 Once the Developer job gets stable, it will create a Docker image for our Web Server, copy the Website code inside it and at the same time push it in the Docker Hub repository.
 
 No alt text provided for this image

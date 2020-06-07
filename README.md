@@ -8,14 +8,13 @@ architecture is provisioned in such a way that when the developer will commit th
 This was a complete Architecture that will Deploy the Website and keep on updating it on runtime using Dynamic Distributed Clusters. One of the main advantage of having this kind of architecture is that as soon as the Containers are Deployed, the remote Clusters get shut down immediately so that there is no wastage of resources. Hence they are termed as Dynamic Distributed Clusters.
 
 ## Prerequisites:
-following things must be configured in your base operating system.
 
-- RedHat 8 VM 
-- Minikube
-- kubctl
-- Jenkins
-- Docker
-- Git/GitHub
+- RedHat 8 VM configured on your virtual machine.
+- Minikube installed on your base operating system.
+- kubectl must be downloaded and given execution access.
+- Jenkins must be configured on your Redhat 8 VM
+- Docker must be installed your Redhat 8 VM.
+- Git/GitHub account must be configured.
 
 
 ## Steps to implement the Project
@@ -140,5 +139,5 @@ This job will match the labels we used to configure the job and will launch the 
 ![configure job2](/readme_images/7.JPG)
 
 ## Common problem that may Occur.
-- if you are using RHEL:8 enter `setenforce 0` command for dissabling firewall.
+- enter `setenforce 0` command for dissabling firewall in your RHEL VM.
 - start your minikube by entring `minikube start` .

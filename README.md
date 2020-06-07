@@ -1,9 +1,6 @@
 
 ## Objective:
 To create an architecture that will Deploy the Website using Dynamic remote Clusters to manage the runtime duration and automation.
-
-in this project we created an architecture to deploy a Website on dynamic distributed Kubernetes Cluster using a remote Node (VM in my case), all provisioned and managed by Jenkins. 
-
 architecture is provisioned in such a way that when the developer will commit the his website code including Dockerfile to the GitHub, a jenkins job that is configured on remote Node will launch a dynamic distributed kubernates cluster that pull the code and build the docker image, an another job will launch the Web Server container and will Deploy the Website. If the developer modifies the code and again comit it, the Cluster will use its Rolling Updates feature to update the Website in the main Deployment Server, updating it with zero downtime.
 
 ## Prerequisites:
@@ -23,9 +20,9 @@ following things must be configured in your base operating system.
 
 - Create a Docker image having Kubectl configured in it, using Dockerfile. The Certifications and the Key files must be present in the same directory. The configuration steps of Kubectl are present in my previous article. Link shared above.
 
-```
-K8s Dockerfile:
 
+K8s Dockerfile:
+```
 FROM centos
 
 
@@ -53,20 +50,14 @@ CMD /bin/bash
 Webserver Dockerfile:
 
 ```
-FROM centos
+FROM centos:8
+
 RUN yum install httpd -y
 RUN yum install php -y
 
-
-COPY *.php /var/www/html/
-
-
-RUN echo "/usr/sbin/httpd" >> /root/.bashrc
-RUN source /root/.bashrc
-
+COPY * /var/www/html/
 
 EXPOSE 80
-
 
 CMD /usr/sbin/httpd -DFOREGROUND
 ```
@@ -74,10 +65,10 @@ CMD /usr/sbin/httpd -DFOREGROUND
 
 - We need to configure Docker Service from the localhost to work as a Client and not as a Server. To configure edit the file /usr/lib/systemd/system/docker.service as follows:
 
-No alt text provided for this image
+
 This will allow any port to access the Docker service remotely from other systems. Enter the following command in the remote system:
 
-export DOCKER_HOST=192.168.99.102:9889
+export DOCKER_HOST=192.168.99.103:2
 
 
 - open the Jenkins WebUI to configure the Clouds and Nodes before configuring our Jobs

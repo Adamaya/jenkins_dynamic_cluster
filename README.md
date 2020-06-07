@@ -20,30 +20,35 @@ following things must be configured in your base operating system.
 
 - Create a Docker image having Kubectl configured in it, using Dockerfile. The Certifications and the Key files must be present in the same directory. The configuration steps of Kubectl are present in my previous article. Link shared above.
 
+*Note: kubectl must be downloaded and copied to the same folder. it must have executive access.
 
 K8s Dockerfile:
 ```
 FROM centos
 
-
-COPY kubernetes.repo /etc/yum.repos.d/
-RUN yum install openssh-server -y
-RUN yum install java -y
-RUN yum install kubectl -y
-RUN yum install git -y
 RUN yum install sudo -y
+RUN yum install java -y
+RUN yum install git -y
+RUN yum install openssh-server -y
+RUN mkdir /var/run/sshd
 
-
-COPY ca.crt .
-COPY client.key .
-COPY client.crt .
-
-
-COPY config /root/.kube/
+#for changing root pasword
+RUN echo 'root:root' | chpasswd
 RUN ssh-keygen -A
-CMD ["/usr/sbin/sshd", "-D"]
-CMD /bin/bash
+
+# for configuring kubectl
+COPY kubectl /usr/bin
+# add your client.key, client.crt and ca.crt
+COPY client.key /root
+COPY client.crt /root
+COPY ca.crt /root
+RUN mkdir .kube
+COPY .kube /root/.kube
+
+EXPOSE 22
+CMD [ "/usr/sbin/sshd", "-D" ]
 ```
+
 
 - create a Docker image having Web Server configured inside it
 

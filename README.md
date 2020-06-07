@@ -110,6 +110,9 @@ This Job will pull the GitHub repo and download the Dockerfile and the Website. 
 
 ![configure job1](/readme_images/1.JPG)
 ![configure job1](/readme_images/2.JPG)
+
+**Note:- change image name according to your dockerhub ID.**
+
 ![configure job1](/readme_images/3.JPG)
 
 
@@ -124,12 +127,18 @@ This will trigger the Second Job Kubernetes_Deployment.
 **Job 2: Deployment**
 
 This job will match the labels we used to configure the job and will launch the Cloud Node accordingly.
+**Note:- change image name according to your dockerhub image.**
 
 ![configure job2](/readme_images/6.JPG)
 
  it will create Deployments using the Container created using Image built in the Developer Job. It will expose the Deployments and will keep on updating the Containers as soon as the developer commits the updated code again on the GitHub.
 
+## How to Test
+- build an pipeline view for better visual.
+- execute job 1 and moniter the pipeline.
+
 ![configure job2](/readme_images/7.JPG)
 
-
-
+## Common problem that may Occur.
+- if you are using RHEL:8 enter `setenforce 0` command for dissabling firewall.
+- start your minikube by entring `minikube start` .

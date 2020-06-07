@@ -92,12 +92,12 @@ Set the Credentials as follows:
 
 Set any name and enter the Docker Host URL of the remote Cluster along with the Port number you have set while configuring the Docker. In my case, I have set the IP of my Localhost itself.
 
-![configure docker services](/readme_images/configcloud.JPG)
+![configure cloud nodes](/readme_images/configcloud.JPG)
 
 Set the Image name built using the Kubernetes Dockerfile
 
-![configure docker services](/readme_images/configcloud1.JPG)
-![configure docker services](/readme_images/configcloud2.JPG)
+![configure cloud nodes](/readme_images/configcloud1.JPG)
+![configure cloud nodes](/readme_images/configcloud2.JPG)
 
 
 Once done now its time to configure Jobs in Jenkins. Create two Jobs in Jenkins- Developer Job and the Kubernetes_Deployment Job
@@ -106,31 +106,28 @@ Job1: Developer
 
 This Job will pull the GitHub repo and download the Dockerfile and the Website. On downloading the Dockerfile, it will build the respective Docker image on runtime.
 
-![configure docker services](/readme_images/1.JPG)
-![configure docker services](/readme_images/2.JPG)
-![configure docker services](/readme_images/3.JPG)
+![configure job1](/readme_images/1.JPG)
+![configure job1](/readme_images/2.JPG)
+![configure job1](/readme_images/3.JPG)
 
 
 
 Once the Developer job gets stable, it will create a Docker image for our Web Server, copy the Website code inside it and at the same time push it in the Docker Hub repository.
 
-![configure docker services](/readme_images/4.JPG)
-![configure docker services](/readme_images/5.JPG)
-![configure docker services](/readme_images/6.JPG)
+![configure job1](/readme_images/4.JPG)
+![configure job1](/readme_images/5.JPG)
 
 This will trigger the Second Job Kubernetes_Deployment.
 
-
-
-Job 2: Kubernetes_Deployment
+**Job 2: Deployment**
 
 This job will match the labels we used to configure the job and will launch the Cloud Node accordingly.
 
-No alt text provided for this image
-No alt text provided for this image
-Now it will create Deployments using the Container created using Image built in the Developer Job. It will expose the Deployments and will keep on updating the Containers as soon as the developer commits the updated code again on the GitHub.
+![configure job2](/readme_images/6.JPG)
 
-No alt text provided for this image
+ it will create Deployments using the Container created using Image built in the Developer Job. It will expose the Deployments and will keep on updating the Containers as soon as the developer commits the updated code again on the GitHub.
+
+
 
 
 This was a complete Architecture that will Deploy the Website and keep on updating it on runtime using Dynamic Distributed Clusters. One of the main advantage of having this kind of architecture is that as soon as the Containers are Deployed, the remote Clusters get shut down immediately so that there is no wastage of resources. Hence they are termed as Dynamic Distributed Clusters.

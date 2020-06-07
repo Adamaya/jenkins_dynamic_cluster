@@ -109,10 +109,13 @@ This Job will pull the GitHub repo and download the Dockerfile and the Website. 
 ![configure docker services](/readme_images/3.JPG)
 
 
+
 Once the Developer job gets stable, it will create a Docker image for our Web Server, copy the Website code inside it and at the same time push it in the Docker Hub repository.
 
-No alt text provided for this image
-No alt text provided for this image
+![configure docker services](/readme_images/4.JPG)
+![configure docker services](/readme_images/5.JPG)
+![configure docker services](/readme_images/6.JPG)
+
 This will trigger the Second Job Kubernetes_Deployment.
 
 

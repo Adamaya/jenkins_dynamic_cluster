@@ -20,7 +20,7 @@ following things must be configured in your base operating system.
 
 - Create a Docker image having Kubectl configured in it, using Dockerfile. The Certifications and the Key files must be present in the same directory. The configuration steps of Kubectl are present in my previous article. Link shared above.
 
-*Note: kubectl must be downloaded and copied to the same folder. it must have executive access.
+*Note: kubectl must be downloaded and copied to the same folder. it must have executive access.*
 
 K8s Dockerfile:
 ```
@@ -74,12 +74,12 @@ CMD /usr/sbin/httpd -DFOREGROUND
 
 add line:
 
-![configure github pull](/readme_images/dconf.PNG)
+![configure github pull](/readme_images/dconf.JPEG)
 
 
 This will allow any port to access the Docker service remotely from other systems. Enter the following command in the remote system:
 
-` export DOCKER_HOST=192.168.99.103:2375`
+`export DOCKER_HOST=192.168.99.103:2375`
 
 
 - open the Jenkins WebUI to configure the Clouds and Nodes before configuring our Jobs
@@ -104,7 +104,7 @@ Once done now its time to configure Jobs in Jenkins. Create two Jobs in Jenkins-
 Jenkins
 
 No alt text provided for this image
-﻿
+
 
 Job1: Developer
 

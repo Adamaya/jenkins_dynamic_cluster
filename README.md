@@ -72,6 +72,10 @@ CMD /usr/sbin/httpd -DFOREGROUND
 
 `vim /usr/lib/systemd/system/docker.service `
 
+add line:
+
+![configure github pull](/readme_images/dconf.PNG)
+
 
 This will allow any port to access the Docker service remotely from other systems. Enter the following command in the remote system:
 

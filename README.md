@@ -20,7 +20,7 @@ following things must be configured in your base operating system.
 
 - Create a Docker image having Kubectl configured in it, using Dockerfile. The Certifications and the Key files must be present in the same directory. The configuration steps of Kubectl are present in my previous article. Link shared above.
 
-*Note: kubectl must be downloaded and copied to the same folder. it must have executive access.*
+**Note: kubectl must be downloaded and copied to the same folder. it must have executive access.**
 
 K8s Dockerfile:
 ```
@@ -74,7 +74,7 @@ CMD /usr/sbin/httpd -DFOREGROUND
 
 add line:
 
-![configure github pull](/readme_images/dconf.JPG)
+![configure docker services](/readme_images/dconf.JPG)
 
 
 This will allow any port to access the Docker service remotely from other systems. Enter the following command in the remote system:
@@ -84,17 +84,18 @@ This will allow any port to access the Docker service remotely from other system
 
 - open the Jenkins WebUI to configure the Clouds and Nodes before configuring our Jobs
 
-Go to Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Add a new Cloud > Docker
+**Go to Manage Jenkins > Manage Nodes and Clouds > Configure Clouds > Add a new Cloud > Docker**
 
 Set the Credentials as follows:
 
-No alt text provided for this image
 Set any name and enter the Docker Host URL of the remote Cluster along with the Port number you have set while configuring the Docker. In my case, I have set the IP of my Localhost itself.
 
-No alt text provided for this image
+![configure docker services](/readme_images/configcloud.JPG)
+
 Set the Image name built using the Kubernetes Dockerfile
 
-No alt text provided for this image
+![configure docker services](/readme_images/configcloud1.JPG)
+![configure docker services](/readme_images/configcloud2.JPG)
 
 
 Once done now its time to configure Jobs in Jenkins. Create two Jobs in Jenkins- Developer Job and the Kubernetes_Deployment Job

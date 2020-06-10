@@ -91,7 +91,7 @@ This will allow any port to access the Docker service remotely from other system
 
 Set the Credentials as follows:
 
-Set any name and enter the Docker Host URL of the remote Cluster along with the Port number you have set while configuring the Docker. In my case, I have set the IP of my Localhost itself.
+Set any name and enter the Docker Host URL of the remote Cluster along with the Port number you have set while configuring the Docker.
 
 ![configure cloud nodes](/readme_images/configcloud.JPG)
 

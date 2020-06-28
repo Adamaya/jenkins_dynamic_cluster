@@ -21,7 +21,7 @@ This was a complete Architecture that will Deploy the Website and keep on updati
 
 - Set up the GitHub account and configure it accordingly from the Git.
 
-- Create a Docker image having Kubectl configured in it, using Dockerfile. The Certifications and the Key files must be present in the same directory. The configuration steps of Kubectl are present in my previous article. Link shared above.
+- Create a Docker image having Kubectl configured in it, using Dockerfile. 
 
 **Note: kubectl must be downloaded and copied to the same folder. it must have executive access.**
 
@@ -101,7 +101,7 @@ Set the Image name built using the Kubernetes Dockerfile
 ![configure cloud nodes](/readme_images/configcloud2.JPG)
 
 
-Once done now its time to configure Jobs in Jenkins. Create two Jobs in Jenkins- Developer Job and the Kubernetes_Deployment Job
+Once done create two Jobs in Jenkins- Developer Job and the Kubernetes_Deployment Job
 
 Job1: Developer
 

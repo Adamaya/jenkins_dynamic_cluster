@@ -1,5 +1,5 @@
 
-# Website deployment Automatomation using Dynamic remote cluster:
+# Website deployment Automation using Dynamic remote cluster:
 To create an architecture that will Deploy the Website using Dynamic remote Clusters to manage the runtime duration and automation.
 architecture is provisioned in such a way that when the developer will commit the his website code including Dockerfile to the GitHub, a jenkins job that is configured on remote Node will launch a dynamic distributed kubernates cluster that pull the code and build the docker image, an another job will launch the Web Server container and will Deploy the Website. If the developer modifies the code and again comit it, the Cluster will use its Rolling Updates feature to update the Website in the main Deployment Server, updating it with zero downtime.
 
